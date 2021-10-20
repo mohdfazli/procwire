@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head id="header">
+
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid pb-2" style="background-color: #eee;">
+    <div >
+      <h4 class="text-center">Requestor Details</h4>
+      <div class="form-group">
+        <label for=""> Name </label>
+        <input type="text" class="form-control" id="irf1" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Department </label>
+        <input type="text" class="form-control" id="irf2" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Date </label>
+        <input type="date" class="form-control" id="irf3" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Date Line </label>
+        <input type="date" class="form-control" id="irf4" placeholder="" >
+      </div>
+      <div class="form-group">
+        <label for=""> Urgent </label>
+        <input type="checkbox" class="form-control" id="irf5" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Title </label>
+        <input type="text" class="form-control" id="irf6" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Description / Item </label>
+        <input type="text" class="form-control" id="irf7" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Quantity </label>
+        <input type="text" class="form-control" id="irf8" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Reason of Purchase </label>
+        <input type="text" class="form-control" id="irf9" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Budgeted </label>
+        <input type="checkbox" class="form-control" id="irf10" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for=""> Budget Reference no. </label>
+        <input type="text" class="form-control" id="irf11" placeholder="">
+      </div>
+    </div>
+  </div>
+
+  <div class="container p-2">
+    <a href="profile.html" onclick="newform()" class="float-right btn btn-primary">Submit</a>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../jquery-3.4.1.min.js"></script>
+  <script src="../popper.min.js" ></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="admin.js"></script>
+  <script src="addirf.js"></script>
+  <script>$("#header").load("header.html");</script>
+</body>
+</html>
