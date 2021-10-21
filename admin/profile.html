@@ -4,6 +4,9 @@
   <title></title>
 </head>
 <body>
+  <div id="navbar">
+
+  </div>
   <div class="container-fluid pb-2" style="background-color: #eee;">
     <h4 class="text-center mb-4"> Procurement </h4>
     <div class="form-group">
@@ -22,7 +25,7 @@
     </div>
   </div>
   <div class="container p-2">
-    <a href="/procurement_prototype/index.html" class="float-right btn btn-primary">Logout</a>
+    <a href="/procwire/index.html" class="float-right btn btn-primary">Logout</a>
   </div>
 
   <!-- Optional JavaScript -->
@@ -31,6 +34,7 @@
   <script src="../popper.min.js" ></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <script src="admin.js"></script>
-  <script>$("#header").load("header.html");</script>
+  <script>$("#header").load("/procwire/templates/head.html");</script>
+  <script>$("#navbar").load("/procwire/templates/navbar.html");</script>
 </body>
 </html>

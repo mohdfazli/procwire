@@ -11,22 +11,30 @@
   <title></title>
 </head>
 <body>
-  <div class="container-fluid pb-2" style="background-color: #eee;">
-    <h4 class="text-center"> LOG IN PAGE</h4>
-    <div class="form-group">
-      <label for="">Username</label>
-      <input type="text" class="form-control" id="" placeholder="Username">
-    </div>
-    <div class="form-group">
-      <label for="">Password</label>
-      <input type="text" class="form-control" id="" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for=""></label>
-      <a href="admin/profile.html" class="container-fluid btn btn-primary">Log In</a>
+<div id="navbar">
+</div>
+  <div class="container ">
+    <div class="container col-md-8 my-3">
+      <div class="card">
+        <h4 class="card-header">Log In</h4>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" class="form-control" id="" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" class="form-control" id="" placeholder="Password">
+          </div>
+          <a href="admin/profile.html" class="btn btn-info">Login</a>
+          <div class="">
+            <a href="new.html" class="">Register</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-    <a href="new.html" class="">Register</a>
+
   <div class="container p-2">
   </div>
 
@@ -36,5 +44,6 @@
   <script src="popper.min.js" ></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="myjs.js"></script>
+  <script>$("#navbar").load("/procwire/templates/navbar.html");</script>
 </body>
 </html>
