@@ -30,14 +30,20 @@ function formid(fid){
 }
 
 //generate list of all 3B form that exist in local storage including empty form
+
+var modalirfitem = 'onclick="popirf(this.innerHTML);" data-toggle="modal" data-target="#exampleModal"'
+
 var qtlink = "<a href='quatationadd.html'>add</a>";
 
 myObj = JSON.parse(localStorage.irf);
 var x = 0;
-$( "#irflist" ).append( "<table class='table table-bordered'><tr><th> Name </th><th> Department </th><th> Item </th><th> Quotation </th> <th> PR</th></tr>" );
+$( "#irflist" ).append( "<table class='table table-bordered'><tr><th>No.</th><th> Name </th><th> Department </th><th> Item </th><th> Quotation </th> <th> PR</th></tr>" );
 while(x < myObj.length){
-  $( "table" ).append( "<tr><td> "+myObj[x].name+"</td><td> "+myObj[x].department+"</td><td> "+myObj[x].item+"</td><td> "+qtlink+" </td> <td> PR</td></tr>" );
+  $( "table" ).append( "<tr><td>"+x+"</td><td> "+myObj[x].name+"</td><td> "+myObj[x].department+"</td><td "+modalirfitem+"> "+myObj[x].item+"</td><td> "+qtlink+" </td> <td> PR</td></tr>" );
   x=x+1;
+}
+function popirf(val){
+  $( ".modal-body" ).html(val);
 }
 
 function addquotation(){
