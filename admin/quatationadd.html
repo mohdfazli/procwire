@@ -17,25 +17,25 @@
       </div>
       <div class="form-group">
         <label for=""> Price </label>
-        <input type="text" class="form-control" id="qt1" placeholder="">
-      </div>
-      <div class="form-group">
-        <label for=""> Brand </label>
         <input type="text" class="form-control" id="qt2" placeholder="">
       </div>
       <div class="form-group">
-        <label for=""> Quantity </label>
+        <label for=""> Brand </label>
         <input type="text" class="form-control" id="qt3" placeholder="">
       </div>
       <div class="form-group">
+        <label for=""> Quantity </label>
+        <input type="text" class="form-control" id="qt4" placeholder="">
+      </div>
+      <div class="form-group">
         <label for=""> Delivery Fee </label>
-        <input type="text" class="form-control" id="qt4" placeholder="" >
+        <input type="text" class="form-control" id="qt5" placeholder="" >
       </div>
     </div>
   </div>
 
   <div class="container p-2">
-    <a href="viewirf.html" onclick="" class="float-right btn btn-primary">Submit</a>
+    <a href="quotationview.html" onclick="newqtform()" class="float-right btn btn-primary">Submit</a>
   </div>
 
   <!-- Optional JavaScript -->
@@ -43,9 +43,11 @@
   <script src="../jquery-3.4.1.min.js"></script>
   <script src="../popper.min.js" ></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
-  <script src="admin.js"></script>
-  <script src="addirf.js"></script>
+
   <script>$("#header").load("/procwire/templates/head.html");</script>
   <script>$("#navbar").load("/procwire/templates/navbar.html");</script>
+
+  <script src="admin.js"></script>
+  <script src="quotationadd.js"></script>
 </body>
 </html>
