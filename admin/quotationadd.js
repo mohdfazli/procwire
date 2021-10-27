@@ -60,13 +60,13 @@ function updateqtview(){
 //generate list of all quotation form that exist in local storage including empty form
 updateqtview();
 var qtlink = "<a href='quotationadd.html'>add</a>";
-var additem = "onclick=newqtitem(this.innerHTML)"
+var additem = "onclick=newqtitem(this.firstChild.innerHTML)"
 
 myObj = JSON.parse(localStorage.qt);
 var x = 0;
 $( "#qtlist" ).append( "<table class='table table-bordered'><tr><th>No.</th><th> Item </th><th> Price </th><th> Brand </th><th> Quantity </th> <th> Delivery Fee</th></tr>" );
 while(x < myObj.length){
-  $( "#qtlist table" ).append( "<tr><td "+additem+">"+x+"</td><td> "+myObj[x].item+"</td><td> "+myObj[x].price+"</td><td> "+myObj[x].brand+"</td><td> "+myObj[x].quantity+" </td> <td>"+myObj[x].delfee+"</td></tr>" );
+  $( "#qtlist table" ).append( "<tr "+additem+"><td>"+x+"</td><td> "+myObj[x].item+"</td><td> "+myObj[x].price+"</td><td> "+myObj[x].brand+"</td><td> "+myObj[x].quantity+" </td> <td>"+myObj[x].delfee+"</td></tr>" );
   x=x+1;
 }
 
