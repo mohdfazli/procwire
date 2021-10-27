@@ -18,7 +18,7 @@ function newqtform(){
   myJSON = JSON.stringify(myObj);
   localStorage.setItem("qt", myJSON);
 }
-//adding pr items to localStorage onclick row
+//adding qt items to localStorage onclick row
 
 if (localStorage.getItem("qtitem") === null) {
   myObj = [];
@@ -56,8 +56,8 @@ function updateqtview(){
   }
   $( "#qtitem" ).append("<h5>Total Price (RM) : "+totalqtprice+"</h5>");
 }
-//generate list of all quotation form that exist in local storage including empty form
 
+//generate list of all quotation form that exist in local storage including empty form
 updateqtview();
 var qtlink = "<a href='quotationadd.html'>add</a>";
 var additem = "onclick=newqtitem(this.innerHTML)"
@@ -68,4 +68,32 @@ $( "#qtlist" ).append( "<table class='table table-bordered'><tr><th>No.</th><th>
 while(x < myObj.length){
   $( "#qtlist table" ).append( "<tr><td "+additem+">"+x+"</td><td> "+myObj[x].item+"</td><td> "+myObj[x].price+"</td><td> "+myObj[x].brand+"</td><td> "+myObj[x].quantity+" </td> <td>"+myObj[x].delfee+"</td></tr>" );
   x=x+1;
+}
+
+//PR generated when click button Generate PR form
+if (localStorage.getItem("pr") === null) {
+  myObj = [];
+  myJSON = JSON.stringify(myObj);
+  localStorage.setItem("pr", myJSON);
+}
+
+function addprform(){ //this will add pr data into localStorage
+  var totalprprice = 0;
+  var x=0;
+  qtitem = JSON.parse(window.localStorage.getItem('qtitem'));
+  irf = JSON.parse(window.localStorage.getItem('irf'));
+  pr = JSON.parse(window.localStorage.getItem('pr'));
+  while(x < qtitem.length){
+    totalprprice = totalprprice + (parseInt(qtitem[x].price)*parseInt(qtitem[x].quantity)) + parseInt(qtitem[x].delfee);
+    x=x+1;
+  }
+  q = [{
+    item: qtitem,
+    department: irf[0].department,
+    requisitor: irf[0].name,
+    totalprice: totalprprice,
+  }];
+  // pr.push(q);
+  myJSON = JSON.stringify(q);
+  localStorage.setItem("pr", myJSON);
 }

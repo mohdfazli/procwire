@@ -11,15 +11,15 @@
   <div class="container pb-2" >
     <div >
       <h4 class="text-center mt-2">Purchase Requisition Form</h4>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> PR Number </label>
         <input type="text" class="form-control" id="pr1" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Date PR Generated </label>
         <input type="date" class="form-control" id="pr2" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> IRF No </label>
         <input type="text" class="form-control" id="pr3" placeholder="">
       </div>
@@ -27,31 +27,31 @@
         <label for=""> Department </label>
         <input type="text" class="form-control" id="pr4" placeholder="" >
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Project Code </label>
         <input type="text" class="form-control" id="pr5" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Vendor </label>
         <input type="text" class="form-control" id="pr6" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Delivery Schedule </label>
         <input type="date" class="form-control" id="pr7" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Payment Terms </label>
         <input type="text" class="form-control" id="pr8" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Reason of Purchase </label>
         <input type="text" class="form-control" id="pr9" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Budgeted </label>
         <input type="text" class="form-control" id="pr10" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" hidden>
         <label for=""> Budget Reference no. </label>
         <input type="text" class="form-control" id="pr11" placeholder="">
       </div>
@@ -67,7 +67,7 @@
       <label for=""> Requested By </label>
       <input type="text" class="form-control" id="pr13" placeholder="">
     </div>
-    <div class="form-group">
+    <div class="form-group" hidden>
       <label for=""> Date Requested </label>
       <input type="date" class="form-control" id="pr14" placeholder="">
     </div>
@@ -75,7 +75,7 @@
       <label for=""> Recommended By </label>
       <input type="text" class="form-control" id="pr15" placeholder="">
     </div>
-    <div class="form-group">
+    <div class="form-group" hidden>
       <label for=""> Date Recommended </label>
       <input type="date" class="form-control" id="pr16" placeholder="">
     </div>
@@ -83,7 +83,7 @@
       <label for=""> Approved By </label>
       <input type="text" class="form-control" id="pr17" placeholder="">
     </div>
-    <div class="form-group">
+    <div class="form-group" hidden>
       <label for=""> Date Approved </label>
       <input type="date" class="form-control" id="pr18" placeholder="">
     </div>
@@ -104,10 +104,11 @@
 
   <script>$("#header").load("/procwire/templates/head.html");</script>
   <script>$("#navbar").load("/procwire/templates/navbar.html");</script>
-  <script>$("#dtablepritem").load("/procwire/templates/dtablepritem.html");</script>
+  <!-- <script>$("#dtablepritem").load("/procwire/templates/dtablepritem.html");</script> -->
 
   <script src="admin.js"></script>
-  <script src="addirf.js"></script>
-  <script src="dynamictable.js"></script>
+  <script src="irfadd.js"></script>
+  <script src="pradd.js"></script>
+  <!-- <script src="dynamictable.js"></script> -->
 </body>
 </html>
