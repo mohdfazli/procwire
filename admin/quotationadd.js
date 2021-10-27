@@ -18,17 +18,54 @@ function newqtform(){
   myJSON = JSON.stringify(myObj);
   localStorage.setItem("qt", myJSON);
 }
+//adding pr items to localStorage onclick row
 
+if (localStorage.getItem("qtitem") === null) {
+  myObj = [];
+  myJSON = JSON.stringify(myObj);
+  localStorage.setItem("qtitem", myJSON);
+}
+
+function newqtitem(x){
+  myObj = JSON.parse(window.localStorage.getItem('qt'));
+  qtitem = JSON.parse(window.localStorage.getItem('qtitem'));
+  q = {
+    item: myObj[x].item,
+    price: myObj[x].price,
+    brand: myObj[x].brand,
+    quantity: myObj[x].quantity,
+    delfee: myObj[x].delfee,
+  };
+  qtitem.push(q);
+  myJSON = JSON.stringify(qtitem);
+  localStorage.setItem("qtitem", myJSON);
+
+  updateqtview();
+}
+
+function updateqtview(){
+  myObj = JSON.parse(localStorage.qtitem);
+  var x = 0;
+  var totalqtprice = 0;
+  $( "#qtitem" ).html("");
+  $( "#qtitem" ).append( "<table class='table table-bordered'><tr><th>No.</th><th> Item </th><th> Price </th><th> Brand </th><th> Quantity </th> <th> Delivery Fee</th></tr>" );
+  while(x < myObj.length){
+    $( "#qtitem table" ).append( "<tr><td "+additem+">"+x+"</td><td> "+myObj[x].item+"</td><td> "+myObj[x].price+"</td><td> "+myObj[x].brand+"</td><td> "+myObj[x].quantity+" </td> <td>"+myObj[x].delfee+"</td></tr>" );
+    totalqtprice = totalqtprice + (parseInt(myObj[x].price)*parseInt(myObj[x].quantity)) + parseInt(myObj[x].delfee);
+    x=x+1;
+  }
+  $( "#qtitem" ).append("<h5>Total Price (RM) : "+totalqtprice+"</h5>");
+}
 //generate list of all quotation form that exist in local storage including empty form
 
-var modalirfitem = ' data-toggle="modal" data-target="#exampleModal"'
+updateqtview();
+var qtlink = "<a href='quotationadd.html'>add</a>";
+var additem = "onclick=newqtitem(this.innerHTML)"
 
-var qtlink = "<a href='quatationadd.html'>add</a>";
-
-myObj = JSON.parse(localStorage.irf);
+myObj = JSON.parse(localStorage.qt);
 var x = 0;
-$( "#irflist" ).append( "<table class='table table-bordered'><tr><th>No.</th><th> Name </th><th> Department </th><th> Item Description </th><th> Quotation </th> <th> PR</th></tr>" );
+$( "#qtlist" ).append( "<table class='table table-bordered'><tr><th>No.</th><th> Item </th><th> Price </th><th> Brand </th><th> Quantity </th> <th> Delivery Fee</th></tr>" );
 while(x < myObj.length){
-  $( "#irflist table" ).append( "<tr><td>"+x+"</td><td> "+myObj[x].name+"</td><td> "+myObj[x].department+"</td><td "+modalirfitem+"> "+myObj[x].item+"</td><td> "+qtlink+" </td> <td> PR</td></tr>" );
+  $( "#qtlist table" ).append( "<tr><td "+additem+">"+x+"</td><td> "+myObj[x].item+"</td><td> "+myObj[x].price+"</td><td> "+myObj[x].brand+"</td><td> "+myObj[x].quantity+" </td> <td>"+myObj[x].delfee+"</td></tr>" );
   x=x+1;
 }

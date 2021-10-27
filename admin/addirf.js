@@ -25,7 +25,7 @@ if (localStorage.getItem("irf") === null) {
 
 var modalirfitem = ' data-toggle="modal" data-target="#exampleModal"'
 
-var qtlink = "<a href='quatationadd.html'>add</a>";
+var qtlink = "<a href='quotationadd.html'>add</a>  <a href='quotationview.html'>view</a>";
 
 myObj = JSON.parse(localStorage.irf);
 var x = 0;
