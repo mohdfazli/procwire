@@ -20,7 +20,10 @@
     </div>
   </div>
 
+
+
   <div class="container p-2">
+    <a href="#" onclick="clearall()" class="float-left btn btn-danger">Delete IRF</a>
     <a href="profile.html" class="float-right btn btn-primary">back</a>
   </div>
 
@@ -36,5 +39,13 @@
 
   <script src="admin.js"></script>
   <script src="irfadd.js"></script>
+  <script>
+  function clearall(){
+    localStorage.irf = '[]';
+    localStorage.qt = '[]';
+    localStorage.qtitem = '[]';
+    localStorage.pr = '[]';
+  }
+  </script>
 </body>
 </html>
